@@ -4,9 +4,9 @@ public class AdditionArray1 {
 	public static void main(String args[])
 	{
 		Scanner scan = new Scanner(System.in);
-		int i,n,sum=0;
-		System.out.println("Enter the number of elements:") ;
- 		n = scan.nextInt();
+		int i,num,sum=0;
+		System.out.println("Please enter the Array size :") ;
+ 		num = scan.nextInt();
 		int[] a = new int[n];
  
     		System.out.println("Enter the elements") ;
@@ -19,6 +19,6 @@ public class AdditionArray1 {
         		sum=sum+a[i];
     		}
     	
-		System.out.println("Sum of "+n+" elements in an array = "+sum);
+		System.out.println("Sum of "+num+" elements in an array = "+sum);
 	}
 }

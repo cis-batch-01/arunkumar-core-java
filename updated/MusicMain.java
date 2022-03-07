@@ -19,11 +19,7 @@ public class MusicMain {
 		Music mus =new Music(title, genre,( duration), rating);
 			System.out.println("\nThe entered details for Music 1");
 			System.out.println(mus);
-
-
-		
-			
-			String[] Musics2=Music2.split(",");
+		String[] Musics2=Music2.split(",");
 			title=Musics2[0];
 			 genre=Musics2[1];
 			 duration=sdf.parse(Musics2[2]);

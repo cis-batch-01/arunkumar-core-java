@@ -2,10 +2,7 @@ import java.sql.Date;
 import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
-
-
 public class Music {
-	
 	private String title;
 	private String genre ;
 	private java.util.Date duration  ;
@@ -79,11 +76,4 @@ public class Music {
 			return false;
 		return true;
 	}
-	
-	
-	
-	}
-
-
-
-	
+		}	

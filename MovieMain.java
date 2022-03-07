@@ -23,10 +23,5 @@ public static void main(String[] args) {
 		System.out.println("the entered details for movie 2");
 	System.out.println(mov1);	
 	System.out.println(mov.equals(mov1)?"1 and 2 are same":"1 and 2 are diff");
-		
-		
-	
-	
-	
-} 
+	} 
 }
