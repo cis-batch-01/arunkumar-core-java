@@ -1,5 +1,5 @@
-create database peacock;
-use peacock;
+create database laga;
+use laga;
 show databases;
 show tables;
 drop table trainer_info;
@@ -51,6 +51,7 @@ insert into Batch_Info values('B007','MRS.SAMPADA JAIN','MSP');
 insert into Batch_Info values('B008','MRS.KAVITA REGE','BPO');
 insert into Batch_Info values('B009','MR.RAVI SEJPAL','MSP');
 select * from Batch_Info;
+
 insert into Module_Info  values('O10SQL','Oracle 10g SQL' ,16);
 insert into Module_Info values('O10PLSQL','Oracle 10g PL/ SQL' ,16);
 insert into Module_Info values('J2SE','Core Java SE 1.6',288);
@@ -68,7 +69,8 @@ insert into Module_Info values('EM004','Environment',0);
 insert into Module_Info values('EM005','Job Impact',0);
 insert into Module_Info values('TM001','Attendees',0);
 insert into Module_Info values('TM002','Course Material',0);
-insert into Module_Info values('TM003','Environment',0);
+insert into Module_Info values('TM003','Environment',0,);
+
 select * from Module_Info;
 select * from Associate_Info1;
 insert into Associate_Info1  values('A001','Miss.','GAYATHRI NARAYANAN','Gurgaon','Java','Bachelor of Technology','Gayathri.Narayanan@hp.com','tne1@123');
@@ -113,8 +115,35 @@ insert into Associate_Status values('A002','J2EE','2005-12-1','2005-12-25','love
 insert into Associate_Status values('A003','J2EE','2005-12-1','2005-12-25','Good','Good','B004','F004');
 insert into Associate_Status values('A004','J2EE','2005-12-1','2005-12-25','Good','Average','B004','F004');
 insert into Associate_Status values('A005','JAVAFX','2005-12-4','2005-12-20','Average','Good','B005','F006');
+insert into Associate_Status values('A006','JAVAFX','2005-12-4','2005-12-20','Good','Average','B005','F006');
+insert into Associate_Status values('A006','SQL2008','2007-6-21','2007-6-28','Good','Average','B006','F007');
+insert into Associate_Status values('A007','SQL2008','2007-6-21','2007-6-28','lovely','lovely','B006','F007');
+insert into Associate_Status values('A002','MSBI08','2009-6-26','2009-6-29''lovely','lovely','B007','F006');
+insert into Associate_Status values('A002','O10PLSQL',2001-2-1,2001-2-12,'lovely','lovely','B002','F002');
+insert into Associate_Status values('A003','MSBI08','2009-6-26','2009-6-29','lovely','lovely','B007','F006');
+insert into Associate_Status values('A004','MSBI08','2009-6-26','2009-6-29','lovely','lovely','B007','F006');
+insert into Associate_Status values('A002','ANDRD4','2010-6-5','2010-6-28','lovely','Good','B008','F005');
+insert into Associate_Status values('A005','ANDRD4','2010-6-5','2010-6-28','lovely','lovely','B008','F005');
+insert into Associate_Status values('A003','ANDRD4','2011-8-1','2011-8-20','lovely','lovely','B009','F005');
+insert into Associate_Status values('A006','ANDRD4','2011-8-1','2011-8-20','lovely','Good','B009','F005');
+
 update  Trainer_Info set Trainer_password='nn4@123' where Trainer_Id ='F004';
 set sql_safe_updates=0;
+select * from Trainer_Info;
+delete from  associate_status  where Associate_Id='A003'
+select * from associate_status;
+delete from Login_Details ;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
