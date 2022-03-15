@@ -92,15 +92,19 @@ select * from experience;
 select* from profile;
 select user.name,experience.company_name from user
 join role on user.ROLE_ID=role.id
-join profile on user.profile_id=user.id
-join experience on profile.id=experience.profile_id where role.name="alumni" group by name;
+join profile on user.profile_id=profile.id
+join experience on user.profile_id=experience.id
+ where role.name="alumni"  order by user.name and experience.company_name;
 /*13. Write a query to display the name and the company name in which they are working of all 
 alumni users(role - 'Alumni'), sorted by name of the user.(Include alumni users who are currently 
 working only).*/
-select user.name,experience.company_name,role.name from user
+select user.name,experience.company_name, experience.current from user
 join role on user.ROLE_ID=role.id
-join experience on user.profile_id where current="1" and role.name="alumni";
-/*14.  Write a query to display the name and the company name in which they are currently working of 
+join profile on user.profile_id=profile.id
+join experience on user.profile_id=experience.profile_id
+where role.name="alumni" and experience.current="1"
+order by user.name and experience.company_name;
+ /*14.  Write a query to display the name and the company name in which they are currently working of 
 all alumni users(role - 'Alumni') from 2008, sorted by name. [Include users who are currently 
 working only]*/
 select user.name,experience.company_name,profile.batch,role.name from user
@@ -139,16 +143,18 @@ join profile on user.PROFILE_ID=profile.id
 join degree on degree.ID=profile.DEGREE_ID
 join department on department.id=degree.department_id
 join experience on experience.profile_id=profile.id where role.name="alumni";
-/*. Write a query to display the name of the alumni users(role - 'Alumni') who have done higher 
+/*19. Write a query to display the name of the alumni users(role - 'Alumni') who have done higher 
 studies in other colleges / universities and the University(s) in which the user has done higher 
 studies, sorted by name and then by University.*/
 select user.name,higher_degree.university_name from user
-join role on user.id=role.id
+join role on user.role_id=role.id
 join profile on user.PROFILE_ID=profile.id
 join degree on degree.ID=profile.DEGREE_ID
-join department on department.id=degree.department_id
-join higher_degree on department.id=degree.department_id
-join experience on experience.profile_id=profile.id where role.name="alumni" group by  name,higher_degree.university_name;
+join department on degree.department_id=department.id
+join higher_degree on profile.id=higher_degree.profile_id
+join experience on experience.profile_id=profile.id
+where role.name="alumni" order by user.name,higher_degree.university_name;
+
 /*20. rite a query to display the name of the alumni users(role - 'Alumni') from 'CSE' department 
 who have done higher studies in other colleges / universities and the University(s) in which the 
 user has done higher studies, sorted by name and then by University.*/
@@ -158,6 +164,10 @@ join profile on user.PROFILE_ID=profile.id
 join degree on degree.ID=profile.DEGREE_ID
 join department on department.id=degree.department_id
 join higher_degree on department.id=degree.department_id
-join experience on experience.profile_id=profile.id where role.name="alumni" and department.name="cse" group by user.name;
+join experience on experience.profile_id=profile.id where role.name="alumni" and department.name="cse" order by user.name;
+
+
+
+
 
 
