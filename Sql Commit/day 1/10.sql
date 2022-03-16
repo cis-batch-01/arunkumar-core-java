@@ -115,7 +115,7 @@ insert into Associate_Status values('A004','J2EE','2005-12-1','2005-12-25','Good
 insert into Associate_Status values('A005','JAVAFX','2005-12-4','2005-12-20','Average','Good','B005','F006');
 
 
-0
+
 
 
 

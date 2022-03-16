@@ -1,3 +1,4 @@
+
 use Ams;
 /* 1. Write a query to display the names of all administrators (role Admin) sorted by name in 
 ascending order.*/
