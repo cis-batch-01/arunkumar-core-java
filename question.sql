@@ -61,11 +61,12 @@ select course.price from course where price<20000;
 
 /*11.write a query to fetch all the corses for the user from organization org05*/
 
-select * from course_students 
+select * from course
 join course_students on course_students.course_id=course.id
 join user on user.id=course_students.user_id 
 join organization on user.organization_id=organization.id
-where organization.id="org05";/*license*/
+where organization.id="org05";
+
 /*12.write a query to display only the admins name and email ,permissions*/
 select user.first_name,user.email,role.permissions from role join organization on role.organization_id=organization.id
 join user on organization.id=user.organization_id where role.title="student";
@@ -76,3 +77,58 @@ join category on cc.category_id=category.id
 where course.status="draft";
 /*14.write a query to display all advanced courese*/
 select course.title from course where level="advanced";
+/*15.write a query to display instructor name and email ,teaching the biginner level courses*/
+select  user.first_name,user.email from  user 
+ join instructor on  instructor.user_id= user.id
+ join course on course.instructor_id=instructor.id where course.level="BEGINNER";
+ /*/15.write a query to display instructor name and email ,teaching the biginner level courses*/
+
+select  user.first_name,user.email from  user 
+ join instructor on  instructor.user_id= user.id
+ join course on course.instructor_id=instructor.id where course.level="BEGINNER";
+ /*15.write a query to display instructor name and email ,teaching the biginner level courses*/
+
+select  user.first_name,user.email from  user 
+ join instructor on  instructor.user_id= user.id
+ join course on course.instructor_id=instructor.id where course.level="BEGINNER";
+ /*16.write a query to fetch all the course for user from org01*/
+select * from user; 
+
+select user.id,user.first_name from course
+ join course_students on course_students.course_id=course.id
+join user on user.id=course_students.user_id 
+join organization on user.organization_id=organization.id
+where organization.id="org01";
+
+ /*17.write a query to show all the subcategory name and its courses for 'backend'*/
+ 
+ select * from category where parent_id in (select id from category where title="back-end");
+ select * from course
+ desc course
+ where visibility =
+(select if(license='internal' || license='external','public','internal')  );
+
+
+
+select * from course;
+select * from organization;
+select * from course_students;
+select course.visibility,organization.license from course
+ join course_students on course_students.course_id=course.id
+join user on user.id=course_students.user_id 
+join organization on user.organization_id=organization.id;
+select * from user
+join course_students on user.id=course_students.user_id
+join course on course_students.course_id=course.id
+join organization on user.organization_id=organization.id
+where organization.license="full"||organization.license="trail";
+
+select * from course;
+select * from organization;
+
+select * from course
+ join course_students on course_students.course_id=course.id
+join user on user.id=course_students.user_id 
+join organization on user.organization_id=organization.id;
+
+
